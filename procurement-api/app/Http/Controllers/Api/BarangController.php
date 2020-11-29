@@ -28,28 +28,7 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'id_vendor' => 'required',
-            'id_rak' => 'required',
-            'nama' => 'required',
-            'tipe' => 'required',
-            'kuantitas' => 'required',
-            'harga' => 'required'
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'message' => 'Validation Error',
-                'error' => $validator->errors()
-            ], 422);
-        }
-
-        $barang = Barang::create($validator->validated());
-
-        return response()->json([
-            'message' => 'Successfully Created New Barang',
-            'data' => $barang
-        ], 200);
+        //
     }
 
     /**
